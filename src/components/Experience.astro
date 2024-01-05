@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Ago. 2022 - Jun. 2023",
+    title:
+      "Desarrollo E-Commerce 'HyperStore' - Proyecto Integrador para Digital House",
+    description:
+      "Proyecto integrador realizado durante el curso en Digital House. Se desarrolló un E-Commerce completo llamado 'HyperStore', abarcando desde el maquetado hasta la implementación de funcionalidades clave.",
+    responsibilities: [
+      "Maquetado y estilos utilizando HTML, CSS y Bootstrap.",
+      "Implementación de funcionalidades con Javascript, NodeJS y Express.",
+      "Diseño y gestión de la base de datos utilizando MySQL y Sequelize.",
+      "Colaboración activa en un entorno ágil utilizando metodologías SCRUM.",
+    ],
+    link: "Enlace opcional al repositorio del proyecto o a más detalles.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
