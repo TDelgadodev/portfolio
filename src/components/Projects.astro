@@ -1,0 +1,82 @@
+---
+import ReactIcon from "./icons/React.astro";
+import JavascriptIcon from "./icons/Javascript.astro";
+import BootstrapIcon from "./icons/Bootstrap.astro";
+import MaterialUIIcon from "./icons/MaterialUI.astro";
+import ExpressIcon from "./icons/Express.astro";
+import NodejsIcon from "./icons/NodeJS.astro";
+
+const TAGS = {
+  Javascript: {
+    name: "Javascript",
+    class: "bg-yellow-600 text-black", 
+    icon: JavascriptIcon,
+  },
+  Nodejs: {
+    name: 'Node.js',
+    class: 'bg-green-800 text-white', 
+    icon: NodejsIcon
+  },
+  Express: {
+    name: 'Express',
+    class: 'bg-black-500 text-white', 
+    icon: ExpressIcon,
+  },
+  React: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: ReactIcon,
+  },
+  Bootstrap: {
+    name: 'Bootstrap',
+    class: 'bg-indigo-800 text-white', 
+    icon: BootstrapIcon
+  },
+  MaterialUI: {
+    name: 'MaterialUI',
+    class: 'bg-blue-900 text-white', 
+    icon: MaterialUIIcon
+  }
+}
+
+const PROJECTS = [
+  {
+    title: "E-commerce Lowcost AR",
+    description:
+    "El ecommerce Lowcost AR es un proyecto que busca la experiencia de compra en línea mas comodo y eficiente para el cliente. Con un enfoque en ofrecer productos asequibles, el sitio web proporciona una interfaz de usuario atractiva y receptiva, permitiendo a los usuarios explorar productos de distintas catergorias.",
+    link: "https://lowcostarg.com.ar/",
+    github: "https://github.com/TDelgadodev/Low_Cost_Frontend",
+    image: "/projects/svgl.webp",
+    tags: [TAGS.Javascript, TAGS.Nodejs,TAGS.Express, TAGS.React, TAGS.Bootstrap, TAGS.MaterialUI],
+  },
+]
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+        {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}
