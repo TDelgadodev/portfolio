@@ -5,8 +5,21 @@ import BootstrapIcon from "./icons/Bootstrap.astro";
 import MaterialUIIcon from "./icons/MaterialUI.astro";
 import ExpressIcon from "./icons/Express.astro";
 import NodejsIcon from "./icons/NodeJS.astro";
+import HTMLIcon from "./icons/HTML.astro";
+import CSSIcon from "./icons/CSS.astro";
+import SequelizeIcon from "./icons/Sequelize.astro";
 
 const TAGS = {
+  HTML: {
+    name: 'HTML5',
+    class: 'bg-orange-500 text-black',
+    icon: HTMLIcon,
+  },
+  CSS: {
+    name: 'CSS',
+    class: 'bg-blue-500 text-white',
+    icon: CSSIcon,
+  },
   Javascript: {
     name: "Javascript",
     class: "bg-yellow-600 text-black", 
@@ -21,6 +34,11 @@ const TAGS = {
     name: 'Express',
     class: 'bg-black-500 text-white', 
     icon: ExpressIcon,
+  },
+  Sequelize: {
+    name: 'Sequelize',
+    class: 'bg-gray-800 text-white',
+    icon: SequelizeIcon,
   },
   React: {
     name: "React",
@@ -49,12 +67,21 @@ const PROJECTS = [
     image: "/projects/svgl.webp",
     tags: [TAGS.Javascript, TAGS.Nodejs,TAGS.Express, TAGS.React, TAGS.Bootstrap, TAGS.MaterialUI],
   },
+  {
+    title: "Desarrollo E-Commerce 'HyperStore'",
+    description:
+      "Proyecto integrador realizado durante el curso en Digital House. Se desarrolló un E-Commerce completo llamado 'HyperStore', abarcando desde el maquetado hasta la implementación de funcionalidades clave.",
+    link: "link de la demo",
+    github: "https://github.com/Hofty95/Grupo_3_HyperStore",
+    image: "/projects/20shots_so.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.Bootstrap, TAGS.Javascript, TAGS.Nodejs, TAGS.Express, TAGS.Sequelize],
+  },
 ]
 ---
 
 {
   PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
+    <article class="mb-4">
       <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
         {title}
       </h3>
