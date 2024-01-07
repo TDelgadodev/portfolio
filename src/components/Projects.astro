@@ -86,11 +86,16 @@ const PROJECTS = [
         {title}
       </h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
+      <ul class="flex gap-x-2 flex-row mb-2 sm:flex flex-wrap justify-start">
         {tags.map((tag) => (
-          <li>
+          <li class="p-1">
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+              class={`
+                flex gap-x-2 
+                rounded-full text-xs ${tag.class} 
+                py-1 px-2 border border-white/10
+                
+                `}
             >
               <tag.icon class="size-4" />
               {tag.name}
