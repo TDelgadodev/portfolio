@@ -33,3 +33,22 @@
     >
   </nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+
+  if(header !== null) {
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      lastScrollTop = scrollTop;
+    });
+  }
+});
+</script>
