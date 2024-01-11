@@ -1,5 +1,4 @@
 ---
-import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import SocialPill from "../components/icons/SocialPill.astro";
@@ -7,10 +6,11 @@ import GithubIcon from "../components/icons/Github.astro";
 import EmailIcon from "../components/icons/Email.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
 import CodeIcon from "../components/icons/Code.astro";
-import MailIcon from "../components/icons/Mail.astro";
+import MailUPIcon from "../components/icons/Mailup.astro";
 ---
 
 <Layout
@@ -27,15 +27,7 @@ import MailIcon from "../components/icons/Mail.astro";
       <h1
         class=" sm: flex-wrap text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
       >
-        Hey, soy thiago 
-          <a
-            href="https://www.linkedin.com/in/tdelgadodev/"
-            target="_blank"
-            rel="noopener"
-            class="flex justify-center items-center mt-2"
-          >
-            <Badge>Estoy disponible para trabajar</Badge>
-          </a>
+        Hola, soy Thiago 
         </h1>
       </h1>
       <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
@@ -72,5 +64,13 @@ import MailIcon from "../components/icons/Mail.astro";
       </h2>
       <Projects />
     </SectionContainer>
+    <SectionContainer id="contacto">
+      <h2 class="text-3xl font-semibold mb-4 flex gap-x-3 items-center">
+        <MailUPIcon class="size-7" />
+        Contacto
+      </h2>
+      <Contact />
+    </SectionContainer>
+
   </main>
 </Layout>
