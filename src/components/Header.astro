@@ -18,15 +18,15 @@
       backdrop-blur-2xl
     `}
   >
-  <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
-    >Sobre mí</a
-  >
     <a
       class="hover:bg-white/10 rounded-full px-3 transition"
       href="#experiencia">Experiencia</a
     >
     <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
       >Proyectos</a
+    >
+    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
+      >Sobre mí</a
     >
     <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
       >Contacto</a
@@ -35,20 +35,21 @@
 </header>
 
 <script>
-document.addEventListener('DOMContentLoaded', (event) => {
-  let lastScrollTop = 0;
-  const header = document.querySelector('header');
+  document.addEventListener("DOMContentLoaded", (event) => {
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
 
-  if(header !== null) {
-    window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        header.classList.add('hide');
-      } else {
-        header.classList.remove('hide');
-      }
-      lastScrollTop = scrollTop;
-    });
-  }
-});
+    if (header !== null) {
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          header.classList.add("hide");
+        } else {
+          header.classList.remove("hide");
+        }
+        lastScrollTop = scrollTop;
+      });
+    }
+  });
 </script>
