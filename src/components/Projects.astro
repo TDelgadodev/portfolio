@@ -97,80 +97,62 @@ const PROJECTS = [
 ];
 ---
 
-<section class="flex flex-col gap-y-12">
+<style>
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+</style>
+
+<div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="mb-4">
-        <h3 class="text-2xl font-semibold text-yellow-800 dark:text-yellow-200 mb-2">
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+     <div class="w-full md:w-1/2 md:max-w-lg">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
           {title}
         </h3>
-        <p class="text-lg mb-4 text-pretty">{description}</p>
-        <ul class="flex gap-x-2 flex-row mb-2 sm:flex flex-wrap justify-start">
+        <div class="flex flex-wrap mt-2">
           {tags.map((tag) => (
-            <li class="p-1">
-              <span
-                class={`
-                  flex gap-x-2 
-                  rounded-full text-xs ${tag.class} 
-                  py-1 px-2 border border-white/10
-                  
-                  `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <img
-          loading="lazy"
-          class="rounded shadow-2xl shadow-white/10 aspect-video"
-          src={image}
-          alt={`Captura de pantalla del proyecto ${image}`}
-        />
-        <footer class="flex gap-x-4">
-          {link && (
-            <LinkButton
-              href={link}
-              target="_blank"
-              class={`
-              bg-white/5 
-              border dark:border-white/10 border-gray-300
-              rounded-full
-              inline-flex justify-center items-center gap-x-2
-              py-1 px-2 md:py-2 md:px-4
-              text-xs md:text-base
-              transition
-              hover:scale-110 hover:bg-white/10
-              mt-4 md:mt-4
-            `}
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2`}
             >
-              <DemoICon />
-             Ir al sitio web
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          ))}
+        </div>
+        <div class="mt-2 text-gray-700 dark:text-gray-400">
+          {description}
+        </div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GithubIcon class="size-6" />
+              Code
             </LinkButton>
           )}
-          {github && (
-            <LinkButton
-              href={github}
-              target="_blank"
-              class={`
-              bg-white/5 
-              border dark:border-white/10 border-gray-300
-              rounded-full
-              inline-flex justify-center items-center gap-x-2
-              py-1 px-2 md:py-2 md:px-4
-              text-xs md:text-base
-              transition
-              hover:scale-110 hover:bg-white/10
-              mt-4 md:mt-4
-            `}
-            >
-              <GithubIcon />
-              Ver código fuente
+          {link && (
+            <LinkButton href={link}>
+              <DemoICon class="size-4" />
+              Preview
             </LinkButton>
           )}
         </footer>
+      </div>
       </article>
     ))
   }
-</section>
+</div>
