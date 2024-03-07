@@ -7,6 +7,11 @@ import ExpressIcon from "./icons/Express.astro";
 import NodejsIcon from "./icons/NodeJS.astro";
 import HTMLIcon from "./icons/HTML.astro";
 import CSSIcon from "./icons/CSS.astro";
+import NextjsIcon from "./icons/Nextjs.astro";
+import TailwindCSSIcon from "./icons/TailwindCss.astro";
+import MongoDBIcon from "./icons/MongoDb.astro";
+import CloudinaryIcon from "./icons/Cloudinary.astro";
+import StripeIcon from "./icons/Stripe.astro";
 import SequelizeIcon from "./icons/Sequelize.astro";
 import DemoICon from "@/components/icons/Demo.astro";
 import GithubIcon from "@/components/icons/Github.astro";
@@ -43,20 +48,45 @@ const TAGS = {
     class: "bg-gray-800 text-white",
     icon: SequelizeIcon,
   },
+  MongoDB: {
+    name: "MongoDB",
+    class: "bg-green-500 text-white",
+    icon: MongoDBIcon, 
+  },
   React: {
     name: "React",
     class: "bg-[#003159] text-white",
     icon: ReactIcon,
+  },
+  Nextjs: {
+    name: "Next.js",
+    class: "bg-gray-900 text-white",
+    icon: NextjsIcon
   },
   Bootstrap: {
     name: "Bootstrap",
     class: "bg-indigo-800 text-white",
     icon: BootstrapIcon,
   },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-cyan-600 text-white",
+    icon: TailwindCSSIcon, 
+  },
   MaterialUI: {
     name: "MaterialUI",
     class: "bg-blue-900 text-white",
     icon: MaterialUIIcon,
+  },
+  Cloudinary: {
+    name: "Cloudinary",
+    class: "bg-gray-600 text-white",
+    icon: CloudinaryIcon, 
+  },
+  Stripe: {
+    name: "Stripe",
+    class: "bg-blue-600 text-white",
+    icon: StripeIcon, 
   },
 };
 
@@ -94,6 +124,22 @@ const PROJECTS = [
       TAGS.Sequelize,
     ],
   },
+  {
+    title: "Imaginify - Saas Aplicattion AI",
+    description:
+    "Imaginify es una plataforma de software como servicio (SaaS) que ofrece potentes herramientas de edición de imágenes impulsadas por inteligencia artificial. Elimina fondos, agrega efectos y más.",
+    link: "https://imaginify-hub.vercel.app",
+    github: "https://github.com/TDelgadodev/ai-saas-platform",
+    image: "/projects/539shots_so.webp",
+    tags: [
+      TAGS.React,
+      TAGS.Nextjs,
+      TAGS.Tailwind,
+      TAGS.MongoDB,
+      TAGS.Cloudinary,
+      TAGS.Stripe 
+    ]
+  }
 ];
 ---
 
@@ -120,7 +166,7 @@ const PROJECTS = [
         <div class="flex flex-wrap mt-2">
           {tags.map((tag) => (
             <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2`}
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-2 mx-1`}
             >
               <tag.icon class="size-4" />
               {tag.name}
