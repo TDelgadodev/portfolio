@@ -15,6 +15,8 @@ import StripeIcon from "./icons/Stripe.astro";
 import SequelizeIcon from "./icons/Sequelize.astro";
 import DemoICon from "@/components/icons/Demo.astro";
 import GithubIcon from "@/components/icons/Github.astro";
+import FirebaseIcon from "@/components/icons/Firebase.astro";
+import PrismaIcon from "@/components/icons/Prisma.astro";
 import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
@@ -88,9 +90,51 @@ const TAGS = {
     class: "bg-blue-600 text-white",
     icon: StripeIcon, 
   },
+  Firebase: {
+    name: "Firebase",
+    class: "bg-yellow-500 text-black",
+    icon: FirebaseIcon,
+  },
+  Prisma: {
+    name: "Prisma",
+    class: "bg-purple-500 text-white",
+    icon: PrismaIcon,
+  },
 };
 
 const PROJECTS = [
+{
+    title: "Blog App",
+    description:
+      "Una aplicación de blog simple desarrollada utilizando tecnologías como React, Next.js, Tailwind CSS, MongoDB, Cloudinary y Stripe.",
+    link: "https://nextjs-blog-tdelgadodev.vercel.app",
+    github: "https://github.com/TDelgadodev/nextjs-blog",
+    image: "/projects/262shots_so.png", 
+    tags: [
+      TAGS.React,
+      TAGS.Nextjs,
+      TAGS.Tailwind,
+      TAGS.MongoDB,
+      TAGS.Prisma,
+      TAGS.Firebase,
+    ]
+  },
+{
+    title: "Imaginify - Saas Aplicattion AI",
+    description:
+    "Imaginify es una plataforma de software como servicio (SaaS) que ofrece potentes herramientas de edición de imágenes impulsadas por inteligencia artificial. Elimina fondos, agrega efectos y más.",
+    link: "https://imaginify-hub.vercel.app",
+    github: "https://github.com/TDelgadodev/ai-saas-platform",
+    image: "/projects/539shots_so.webp",
+    tags: [
+      TAGS.React,
+      TAGS.Nextjs,
+      TAGS.Tailwind,
+      TAGS.MongoDB,
+      TAGS.Cloudinary,
+      TAGS.Stripe 
+    ]
+  },
   {
     title: "E-commerce Lowcost AR",
     description:
@@ -124,22 +168,6 @@ const PROJECTS = [
       TAGS.Sequelize,
     ],
   },
-  {
-    title: "Imaginify - Saas Aplicattion AI",
-    description:
-    "Imaginify es una plataforma de software como servicio (SaaS) que ofrece potentes herramientas de edición de imágenes impulsadas por inteligencia artificial. Elimina fondos, agrega efectos y más.",
-    link: "https://imaginify-hub.vercel.app",
-    github: "https://github.com/TDelgadodev/ai-saas-platform",
-    image: "/projects/539shots_so.webp",
-    tags: [
-      TAGS.React,
-      TAGS.Nextjs,
-      TAGS.Tailwind,
-      TAGS.MongoDB,
-      TAGS.Cloudinary,
-      TAGS.Stripe 
-    ]
-  }
 ];
 ---
 
